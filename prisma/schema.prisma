@@ -1,0 +1,22 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model Asset {
+  id             String  @id @default(uuid()) 
+  title          String  
+  manufacturer   String  
+  color          String  
+  serialNumber   String  
+  purchaseDate   DateTime @default(now())  
+  purchasePrice  Float  
+  depreciation   Float  
+  disposeValue   Float  // Renamed to match camelCase convention
+  assignedTo     String  
+}
+
