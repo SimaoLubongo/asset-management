@@ -18,10 +18,10 @@ import {
 import { data } from "@/components/menu";
 
 export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
-  const pathname = usePathname(); // Obtém a URL atual para verificar qual item está ativo
+  const pathname = usePathname(); // Gets the current URL to check which item is active
 
   return (
-    <Sidebar {...props} className="bg-card shadow-lg"> {/* Cor de fundo e sombra */}
+    <Sidebar {...props} className="bg-card shadow-lg"> {/*Background color and shadow*/}
       <SidebarHeader>
         <VersionSwitcher versions={data.versions} defaultVersion={data.versions[0]} />
       </SidebarHeader>
@@ -32,7 +32,7 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
             <SidebarGroupContent>
               <SidebarMenu>
                 {parentItem.items.map((item) => {
-                  const isActive = pathname === item.url; // Verifica se a URL atual corresponde ao item
+                  const isActive = pathname === item.url; // Checks if the current URL matches the item
 
                   return (
                     <SidebarMenuItem key={item.title}>
@@ -42,7 +42,7 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
                           ${isActive ? "bg-primary text-primary-foreground" : "hover:bg-muted hover:text-foreground"}`}
                       >
                         <a href={item.url} className="flex items-center gap-2 w-full">
-                          <item.icon className="w-5 h-5" /> {/* Ícone do menu */}
+                          <item.icon className="w-5 h-5" /> {/* Menu icon */}
                           {item.title}
                         </a>
                       </SidebarMenuButton>

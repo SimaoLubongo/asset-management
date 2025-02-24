@@ -53,7 +53,7 @@ export default function AddAssetPage() {
       if (result.success) {
         toast({
           title: "Success!",
-          description: "Ativo adicionado com sucesso!",
+          description: "Asset added successfully!",
           variant: "default",
         });
         reset();

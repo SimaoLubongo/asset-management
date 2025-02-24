@@ -41,7 +41,7 @@ export const data = {
           icon: Database,
         },
         {
-          title: "Configurações",
+          title: "Configurations",
           url: "#",
           icon: Settings,
         },

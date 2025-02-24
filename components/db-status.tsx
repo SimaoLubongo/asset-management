@@ -18,10 +18,10 @@ const DatabaseStatus: React.FC = () => {
           setStatus('connected');
         } else {
           setStatus('error');
-          setError(data.error || 'Erro desconhecido');
+          setError(data.error || 'Unknown error');
         }
       } catch (err) {
-        setError(err instanceof Error ? err.message : 'Erro desconhecido');
+        setError(err instanceof Error ? err.message : 'Unknown error');
         setStatus('error');
       }
     };
@@ -31,12 +31,12 @@ const DatabaseStatus: React.FC = () => {
 
   return (
     <div>
-      <h2>Status da Conexão com o Banco de Dados:</h2>
-      {status === 'connected' && <p style={{ color: 'green' }}>Conectado com sucesso!</p>}
+      <h2>Database Connection Status:</h2>
+      {status === 'connected' && <p style={{ color: 'green' }}>Connected successfully!</p>}
       {status === 'error' && (
-        <p style={{ color: 'red' }}>Erro na conexão: {error || 'Erro desconhecido'}</p>
+        <p style={{ color: 'red' }}>Connection error: {error || 'Unknown error'}</p>
       )}
-      {status === null && <p>Verificando conexão...</p>}
+      {status === null && <p>Checking connection...</p>}
     </div>
   );
 };
