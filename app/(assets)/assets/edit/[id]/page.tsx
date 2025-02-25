@@ -47,7 +47,7 @@ interface AssetEditPageProps {
 const AssetEditPage = ({ params }: AssetEditPageProps) => {
   const router = useRouter();
   const { toast } = useToast();
-  const resolvedParams = use(params); // ✅ Unwrap params
+  const resolvedParams = use(params); //  Unwrap params
   const assetId = resolvedParams.id;
  
   const [asset, setAsset] = useState<any>(null);
@@ -62,9 +62,9 @@ const AssetEditPage = ({ params }: AssetEditPageProps) => {
       color: "",
       serialNumber: "",
       purchaseDate: "",
-      purchasePrice: "0",
-      depreciation: "0",
-      disposeValue: "0",
+      purchasePrice: 0,
+      depreciation: 0,
+      disposeValue: 0,
       assignedTo: "",
     },
   });
